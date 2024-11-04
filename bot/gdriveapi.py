@@ -3,8 +3,8 @@ from google.oauth2 import service_account
 from googleapiclient.http import MediaFileUpload
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
-SERVICE_ACCOUNT_FILE = 'service_account.json'
-PARENT_FOLDER_ID = "1EN_-aCmVqduQxsOwbIurZHq_i-V7YQOM"
+SERVICE_ACCOUNT_FILE = '/home/pythonanywhere_username/personalbot-hosting/bot/service_account.json'
+PARENT_FOLDER_ID = 'Google Drive folder id'
 
 def authenticate():
     creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)

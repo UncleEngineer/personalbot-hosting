@@ -72,20 +72,19 @@ app.logger.setLevel(logging.INFO)
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# get channel_secret and channel_access_token from your environment variable
-channel_secret = os.getenv('line_channel_secret', None)
-channel_access_token = os.getenv('line_access_token', None)
+channel_secret = ''
+channel_access_token = ''
 if channel_secret is None or channel_access_token is None:
     print('Specify LINE_CHANNEL_SECRET and LINE_CHANNEL_ACCESS_TOKEN as environment variables.')
     sys.exit(1)
 
 handler = WebhookHandler(channel_secret)
-static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
-
+# static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
+static_tmp_path = '/home/pythonanywhere_username/personalbot-hosting/bot/static/tmp'
 configuration = Configuration(
     access_token=channel_access_token
 )
-userid = "U7dc185db338241c31bc6714fcbbb1422"
+userid = "Your own user id"
 OCR_Mode = False
 
 def get_quick_reply_items():

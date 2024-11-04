@@ -8,8 +8,8 @@ import pandas as pd
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
+file_name = '/home/pythonanywhere_username/personalbot-hosting/bot/daily_expenses.xlsx'
 
-file_name = 'daily_expenses.xlsx'
 
 # Check if the file exists
 if os.path.exists(file_name):
